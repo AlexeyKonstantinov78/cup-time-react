@@ -1,3 +1,5 @@
+import './Promo.css';
+
 export const Promo = () => {
   return (
     <section className="promo">

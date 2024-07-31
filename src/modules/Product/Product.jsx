@@ -1,3 +1,5 @@
+import './Product.css';
+
 export const Product = ({ title, image, price }) => {
   return (
     <li className="products__item">
