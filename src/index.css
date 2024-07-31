@@ -128,17 +128,11 @@ button {
   font-size: 0;
 }
 
-.header__nav {}
-
 .header__menu {
   display: flex;
   align-items: center;
   gap: 50px;
 }
-
-.header__menu-item {}
-
-.header__menu-link {}
 
 .header__cart-link {
   width: 28px;
@@ -163,7 +157,6 @@ button {
   background-image: url("/img/bg.png");
   background-repeat: no-repeat;
   background-position: right 113px bottom 0;
-
 }
 
 .promo__title {
@@ -186,8 +179,6 @@ button {
   padding-bottom: 100px;
 }
 
-.products__container {}
-
 .products__title {
   font-size: 54px;
   line-height: 1.1;
@@ -201,17 +192,14 @@ button {
   gap: 20px;
 }
 
-.products__item {}
-
 .product {
   background-color: #f2f9f7;
+  height: 100%;
   min-height: 600px;
   display: flex;
   flex-direction: column;
   color: #1d1c1d;
 }
-
-.product__img {}
 
 .product__content {
   padding: 40px 24px 24px;
@@ -249,10 +237,6 @@ button {
   justify-content: space-between;
 }
 
-.footer__logo-link {}
-
-.footer__logo {}
-
 .footer__nav {
   font-size: 20px;
 }
@@ -262,9 +246,10 @@ button {
   gap: 50px;
 }
 
-.footer__menu-item {}
-
-.footer__menu-link {}
+.footer__menu-link {
+  color: #fff;
+  font-size: 20px;
+}
 
 .footer__info {
   font-size: 16px;
@@ -274,20 +259,20 @@ button {
   margin-bottom: 17px;
 }
 
-.footer__description {}
+.footer__description {
+  margin-bottom: 3px;
+}
 
-.footer__developers {}
-
-.footer__developer {}
-
-.footer_developer-link {}
+.footer__description:last-child {
+  margin-bottom: 0;
+}
 
 .footer__contacts {
   font-size: 16px;
 }
 
 .footer__email {
-  display: block;
+  display: inline-block;
   margin-bottom: 16px;
 }
 
@@ -302,4 +287,179 @@ button {
   height: 32px;
 }
 
-.footer_social-link {}
+@media (width <=1240px) {
+  .container {
+    padding: 0 42px;
+  }
+
+  .header {
+    padding: 0 20px;
+    top: 20px;
+  }
+
+  .header__container {
+    padding: 12px 22px;
+  }
+
+  .promo__container {
+    padding-top: 172px;
+    padding-bottom: 60px;
+    background-image: url("/img/bg1240.png");
+    background-position: right 90px bottom;
+  }
+
+  .promo__title {
+    font-size: 70px;
+    margin-bottom: 40px;
+    max-width: 622px;
+  }
+
+  .product {
+    min-height: 450px;
+  }
+
+  .footer__menu {
+    gap: 32px;
+  }
+}
+
+@media (width <=940px) {
+  .header__logo {
+    width: 78px;
+  }
+
+  .header__menu {
+    gap: 24px;
+  }
+
+  .header__menu-link {
+    font-size: 16px;
+  }
+
+  .promo__container {
+    background-position: right 42px bottom;
+    background-size: 203px;
+    padding-top: 157px;
+  }
+
+  .promo__title {
+    font-size: 54px;
+    max-width: 454px;
+  }
+
+  .promo__link {
+    padding: 12px 18px;
+    font-size: 16px;
+  }
+
+  .products {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .products__title {
+    font-size: 36px;
+    margin-bottom: 24px;
+  }
+
+  .products__list {
+    grid-template-columns: repeat(auto-fill, minmax(217px, 1fr));
+    gap: 16px;
+  }
+
+  .product {
+    min-height: 360px;
+  }
+
+  .product__content {
+    padding: 40px 24px 24px;
+  }
+
+  .product__title {
+    font-size: 20px;
+  }
+
+  .product__price {
+    font-size: 16px;
+  }
+
+  .footer {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .footer__menu {
+    gap: 24px;
+    font-size: 16px;
+  }
+
+  .footer__menu-link {
+    font-size: 16px;
+  }
+
+  .footer__info {
+    font-size: 12px;
+  }
+
+  .footer__email {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+}
+
+@media (width <=660px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .header {
+    padding: 0;
+    top: 8px;
+  }
+
+  .header__nav {
+    display: none;
+  }
+
+  .promo__container {
+    padding-top: 89px;
+    padding-bottom: 249px;
+    background-size: 145px;
+    background-position: center bottom;
+  }
+
+  .promo__title {
+    font-size: 40px;
+    max-width: 100%;
+    margin-bottom: 24px;
+  }
+
+  .products {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .products__list {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 8px;
+  }
+
+  .product__content {
+    padding: 32px 16px 16px;
+  }
+
+  .product__title {
+    font-size: 16px;
+  }
+
+  .footer__container {
+    display: grid;
+    gap: 40px;
+    grid-template-columns: 1fr;
+  }
+
+  .footer__menu {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
