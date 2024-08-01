@@ -1,12 +1,13 @@
+import { Link } from 'react-router-dom';
 import './Footer.css';
 
 export const Footer = () => {
   return (
     <footer className="footer">
       <div className="container footer__container">
-        <a className="footer__logo-link">
+        <Link className="footer__logo-link" to='/'>
           <img className="footer__logo" src="img/logo.svg" alt="Логотип cup-time" />
-        </a>
+        </Link>
         <div className="footer__nav">
           <ul className="footer__menu">
             <li className="footer__menu-item">

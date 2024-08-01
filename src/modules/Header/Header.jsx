@@ -1,12 +1,13 @@
+import { Link } from 'react-router-dom';
 import './Header.css';
 
 export const Header = () => {
   return (
     <header className="header">
       <div className="container header__container">
-        <a className="header__logo-link">
+        <Link className="header__logo-link" to='/'>
           <img className="header__logo" src="img/logo.svg" alt="Логотип cup-time" />
-        </a>
+        </Link>
         <nav className="header__nav">
           <ul className="header__menu">
             <li className="header__menu-item">
@@ -26,7 +27,7 @@ export const Header = () => {
             </li>
           </ul>
         </nav>
-        <a className="header__cart-link" href="cart.html">6</a>
+        <Link className="header__cart-link" to='/cart' >6</Link>
       </div>
     </header>
   );
