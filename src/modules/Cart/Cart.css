@@ -1,0 +1,61 @@
+.cart {
+  padding-top: 215px;
+  padding-bottom: 50px;
+}
+
+.cart__container {
+  display: grid;
+  align-items: start;
+  grid-template-columns: 2fr 1fr;
+  gap: 32px 20px;
+}
+
+.cart__title {
+  grid-column: 1 / -1;
+  font-weight: 400;
+  font-size: 54px;
+  line-height: 1.1;
+  color: #64099b;
+}
+
+.cart__items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.cart__summary {
+  display: grid;
+  grid-template-areas:
+    "title button"
+    "total button"
+  ;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding: 24px;
+  background-color: #f2f9f7;
+  color: #1d1d1d;
+}
+
+.cart__summary-title {
+  grid-area: title;
+  font-size: 20px;
+  color: #1d1d1d;
+}
+
+.cart__total {
+  grid-area: total;
+  font-size: 20px;
+  color: #1d1d1d;
+}
+
+.cart__order-button {
+  grid-area: button;
+  border: 1px solid #64099b;
+  border-radius: 4px;
+  padding: 16px 24px;
+  font-size: 20px;
+  color: #64099b;
+  background-color: transparent;
+}

@@ -1,0 +1,63 @@
+.order {
+  padding-top: 50px;
+  padding-bottom: 100px;
+}
+
+.delivery__title {
+  font-weight: 400;
+  font-size: 54px;
+  line-height: 1.1;
+  color: #64099b;
+  margin-bottom: 32px;
+}
+
+.order__form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 640px;
+
+}
+
+.order__input {
+  border-radius: 4px;
+  padding: 16px;
+  background-color: #f2f9f7;
+  font-size: 16px;
+  border: none;
+}
+
+.order__input::placeholder {
+  color: #b8b8b8;
+}
+
+.order__input_address {
+  grid-column: 1/-1;
+}
+
+.order__payment {
+  padding-top: 12px;
+}
+
+.order__payment-title {
+  display: block;
+  font-weight: 400;
+  font-size: 20px;
+  color: #1d1d1d;
+  margin-bottom: 12px;
+}
+
+.order__payment-label {
+  display: block;
+  font-size: 16px;
+  color: #1d1d1d;
+  margin-bottom: 8px;
+}
+
+.order__payment-label:last-child {
+  margin-bottom: 0;
+}
+
+.order__radio {
+  margin-right: 8px;
+}
