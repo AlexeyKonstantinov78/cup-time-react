@@ -30,6 +30,7 @@ export const ProductModal = ({ isOpen, onRequestClose, data }) => {
         className='modal__img'
         src={`${API_URL}${data.img}`}
         alt={data.title}
+        width={366}
       />
       <div className='modal__content'>
         <h2 className='modal__title'>{data.title}</h2>
