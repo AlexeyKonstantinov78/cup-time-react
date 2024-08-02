@@ -8,7 +8,6 @@ export const Header = () => {
     const currentCategory = new URLSearchParams(location.search).get(
       'category'
     );
-    console.log('currentCategory: ', currentCategory);
 
     return currentCategory === category ? 'active' : '';
   };
