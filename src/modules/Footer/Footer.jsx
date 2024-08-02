@@ -11,19 +11,19 @@ export const Footer = () => {
         <div className="footer__nav">
           <ul className="footer__menu">
             <li className="footer__menu-item">
-              <a className="footer__menu-link" href="#"> Чай </a>
+              <Link className="footer__menu-link" to="/products?category=tea">Чай</Link>
             </li>
             <li className="footer__menu-item">
-              <a className="footer__menu-link" href="#"> Кофе </a>
+              <Link className="footer__menu-link" to="/products?category=coffee">Кофе</Link>
             </li>
             <li className="footer__menu-item">
-              <a className="footer__menu-link" href="#"> Чайники </a>
+              <Link className="footer__menu-link" to="/products?category=teapots">Чайники</Link>
             </li>
             <li className="footer__menu-item">
-              <a className="footer__menu-link" href="#"> Турки </a>
+              <Link className="footer__menu-link" to="/products?category=cezves">Турки</Link>
             </li>
             <li className="footer__menu-item">
-              <a className="footer__menu-link" href="#"> Прочее </a>
+              <Link className="footer__menu-link" to="/products?category=other">Прочее</Link>
             </li>
           </ul>
         </div>
