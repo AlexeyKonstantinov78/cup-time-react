@@ -14,7 +14,12 @@
   font-weight: 400;
   font-size: 20px;
   color: #1d1c1d;
+  margin-top: 0;
   margin-bottom: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
 }
 
 .cart-item__quantity {
@@ -54,4 +59,42 @@
 
 .cart-item__price {
   font-size: 20px;
+}
+
+@media (width <=940px) {
+  .cart-item__title {
+    font-size: 16px;
+    display: block;
+    white-space: nowrap;
+  }
+
+  .cart-item__quantity {
+    gap: 0;
+  }
+
+  .cart-item__quantity-button {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+  }
+
+  .cart-item__quantity-input {
+    font-size: 16px;
+  }
+
+  .cart-item__price {
+    line-height: 1.24;
+    color: #1d1d1d;
+    font-size: 16px;
+  }
+}
+
+@media (width <=660px) {
+  .cart-item__info {
+    padding: 16px 8px;
+  }
+
+  .cart-item__quantity {
+    margin-bottom: 12px;
+  }
 }

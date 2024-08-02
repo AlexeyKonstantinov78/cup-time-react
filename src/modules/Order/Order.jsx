@@ -4,7 +4,7 @@ export const Order = () => {
   return (
     <section className='order'>
       <div className='container order__container'>
-        <h2 className='delivery__title'>Доставка</h2>
+        <h2 className='order__title'>Доставка</h2>
 
         <form className='order__form'>
           <input
