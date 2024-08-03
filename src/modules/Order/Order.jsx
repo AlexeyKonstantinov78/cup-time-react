@@ -30,10 +30,10 @@ export const Order = () => {
             <h3 className="order__payment-title">Оплата:</h3>
 
             <label className='order__payment-label'>
-              <input className='order__radio' type="radio" name="payment" value="card" /> Картой
+              <input className='order__radio' type="radio" name="payment" defaultValue="card" /> Картой
             </label>
             <label className='order__payment-label'>
-              <input className='order__radio' type="radio" name="payment" value="cash" defaultChecked /> Наличные
+              <input className='order__radio' type="radio" name="payment" defaultValue="cash" defaultChecked /> Наличные
             </label>
           </fieldset>
         </form>

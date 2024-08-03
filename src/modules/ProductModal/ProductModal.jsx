@@ -20,7 +20,7 @@ Modal.setAppElement('#root');
 export const ProductModal = ({ isOpen, onRequestClose, data }) => {
   const [quantity, setQuantity] = useState(1);
 
-  const { cart, addToCart, removeFromCart, updateQuantity } = useCart();
+  const { addToCart } = useCart();
 
   if (!data) {
     return null;
