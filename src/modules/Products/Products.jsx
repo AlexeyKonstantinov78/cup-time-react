@@ -1,12 +1,12 @@
 import './Products.css';
 import { Product } from '../Product/Product';
-// import { products } from '../../products';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useProducts } from '../context/ProductContext';
 import { useSearchParams } from 'react-router-dom';
 import { categoryTitles } from '../../const';
 
 export const Products = () => {
+  const scrollRef = useRef(null);
   const [searchParams] = useSearchParams();
   const { products, setCategory } = useProducts();
   const category = searchParams.get('category');
@@ -21,8 +21,15 @@ export const Products = () => {
     });
   }, [category, setCategory]);
 
+  useEffect(() => {
+
+    scrollRef.current.scrollIntoView({ behavior: 'smooth' });
+
+
+  }, [products]);
+
   return (
-    <section className="products">
+    <section className="products" ref={scrollRef}>
       <div className="container products__container">
         <h2 className="products__title">{title}</h2>
         <ul className="products__list">
