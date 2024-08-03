@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useProducts } from '../context/ProductContext';
 import { useSearchParams } from 'react-router-dom';
 import { categoryTitles } from '../../const';
+import { SkeletonLoader } from '../SkeletonLoader/SkeletonLoader';
 
 export const Products = () => {
   const scrollRef = useRef(null);
@@ -22,10 +23,7 @@ export const Products = () => {
   }, [category, setCategory]);
 
   useEffect(() => {
-
     scrollRef.current.scrollIntoView({ behavior: 'smooth' });
-
-
   }, [products]);
 
   return (
@@ -33,8 +31,9 @@ export const Products = () => {
       <div className="container products__container">
         <h2 className="products__title">{title}</h2>
         <ul className="products__list">
-          {
-            products.map(product => <Product key={product.id} {...product} />)
+          {products.length ?
+            (products.map(product => <Product key={product.id} {...product} />)) :
+            (<SkeletonLoader />)
           }
         </ul>
       </div>
