@@ -7,3 +7,5 @@ export const categoryTitles = [
   { value: 'cezves', title: 'Турки' },
   { value: 'other', title: 'Прочее' },
 ];
+
+export const KEY_STORE = 'cart';

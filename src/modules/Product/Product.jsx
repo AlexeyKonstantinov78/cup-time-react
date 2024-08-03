@@ -3,7 +3,7 @@ import { API_URL } from '../../const';
 import './Product.css';
 import { ProductModal } from '../ProductModal/ProductModal';
 
-export const Product = ({ title, img, price, additional }) => {
+export const Product = ({ id, title, img, price, additional }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const openModal = (event) => {
@@ -26,7 +26,7 @@ export const Product = ({ title, img, price, additional }) => {
           </div>
         </article>
       </a>
-      <ProductModal isOpen={modalIsOpen} onRequestClose={closeModal} data={{ title, img, price, additional }} />
+      <ProductModal isOpen={modalIsOpen} onRequestClose={closeModal} data={{ id, title, img, price, additional }} />
     </li>
   );
 };

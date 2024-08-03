@@ -1,6 +1,8 @@
 import Modal from 'react-modal';
 import './ProductModal.css';
 import { API_URL } from '../../const.js';
+import { useState } from 'react';
+import { useCart } from '../context/CartContext.jsx';
 
 const customStyles = {
   content: {
@@ -16,9 +18,28 @@ const customStyles = {
 Modal.setAppElement('#root');
 
 export const ProductModal = ({ isOpen, onRequestClose, data }) => {
+  const [quantity, setQuantity] = useState(1);
+
+  const { cart, addToCart, removeFromCart, updateQuantity } = useCart();
+
   if (!data) {
     return null;
   }
+
+  const handleDecrease = () => {
+    if (quantity > 1) {
+      setQuantity(quantity - 1);
+    }
+  };
+  const handleIncrease = () => {
+    setQuantity(quantity + 1);
+  };
+  const handleAddToCart = () => {
+    // ! todo добавить товар в корзину
+    addToCart(data, quantity);
+    onRequestClose();
+  };
+
   return (
     <Modal
       className='modal'
@@ -42,13 +63,24 @@ export const ProductModal = ({ isOpen, onRequestClose, data }) => {
             </li>
           ))}
         </ul>
-        <div className="modal__quantity">
-          <div className="cart-item__quantity">
-            <button className="cart-item__quantity-button cart-item__quantity-button_minus"></button>
-            <input className="cart-item__quantity-input" type="number" value={1} />
-            <button className="cart-item__quantity-button cart-item__quantity-button_plus"></button>
+        <div className='modal__quantity'>
+          <div className='cart-item__quantity'>
+            <button
+              className='cart-item__quantity-button cart-item__quantity-button_minus'
+              onClick={handleDecrease}></button>
+            <input
+              className='cart-item__quantity-input'
+              type='number'
+              value={quantity}
+              readOnly
+            />
+            <button
+              className='cart-item__quantity-button cart-item__quantity-button_plus'
+              onClick={handleIncrease}></button>
           </div>
-          <button className="cart__order-button">Добавить</button>
+          <button className='cart__order-button' onClick={handleAddToCart}>
+            Добавить в корзину
+          </button>
         </div>
       </div>
 
