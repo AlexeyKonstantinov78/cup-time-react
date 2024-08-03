@@ -8,11 +8,13 @@ export const Cart = () => {
 
   const totalPrice = cart ? cart.reduce((acc, item) => acc + item.price * item.quantity, 0) : 0;
 
+  const cartCount = cart ? cart.reduce((acc, item) => acc + item.quantity, 0) : 0;
+
   return (
     <section className="cart">
       <div className="container cart__container">
         <h2 className="cart__title">
-          Корзина ({cart ? cart.length : 0})
+          Корзина ({cartCount})
         </h2>
         <ul className="cart__items">
           {cart && cart.map(product => <CartItem key={product.id} {...product} />)}
