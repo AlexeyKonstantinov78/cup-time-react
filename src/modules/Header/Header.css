@@ -44,6 +44,21 @@
   padding: 10px 4px 3px;
 }
 
+.header__control {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header__close-btn {
+  display: none;
+}
+
+.header__burger {
+  display: none;
+  /* Скрыть кнопку-бургер по умолчанию */
+}
+
 @media (width <=1240px) {
   .header {
     padding: 0 20px;
@@ -77,5 +92,45 @@
 
   .header__nav {
     display: none;
+  }
+
+  .header__burger {
+    display: block;
+    /* Показать кнопку-бургер на мобильных устройствах */
+    width: 28px;
+    height: 28px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  .header__nav.active {
+    display: flex;
+    /* Показать навигацию при активации бургера */
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    overflow: hidden;
+    inset: 0;
+    height: 100vh;
+    background-color: #6cb9ab;
+  }
+
+  .header__menu {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header__close-btn {
+    position: absolute;
+    top: 20px;
+    right: 16px;
+    display: block;
+    /* Показать кнопку-бургер на мобильных устройствах */
+    width: 28px;
+    height: 28px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
   }
 }
