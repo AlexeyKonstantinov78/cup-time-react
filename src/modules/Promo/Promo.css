@@ -26,6 +26,10 @@
   padding: 16px 24px;
 }
 
+.promo__block {
+  height: 60px;
+}
+
 @media (width <=1240px) {
   .promo__container {
     padding-top: 172px;
