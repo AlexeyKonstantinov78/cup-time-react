@@ -60,6 +60,31 @@
   background-color: transparent;
 }
 
+.modal-cart {
+  position: absolute;
+  display: flex;
+  inset: 50% auto auto 50%;
+  border: 1px solid rgb(204, 204, 204);
+  background: rgb(255, 255, 255);
+  overflow: auto;
+  border-radius: 4px;
+  outline: none;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  max-width: 744px;
+  border-radius: 6px;
+  background-color: #f2f9f7;
+  padding: 30px;
+}
+
+.modal-cart__button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 20px;
+  height: 20px;
+}
+
 @media (width <=1240px) {
   .cart {
     padding: 170px 0 50px;

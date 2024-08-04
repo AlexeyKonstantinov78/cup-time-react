@@ -9,3 +9,5 @@ export const categoryTitles = [
 ];
 
 export const KEY_STORE = 'cart';
+export const ERROR = 'error';
+export const SUCCESS = 'success';
