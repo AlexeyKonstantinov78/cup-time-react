@@ -9,6 +9,14 @@ export const ProductProvider = ({ children }) => {
 
   const [category, setCategory] = useState("");
 
+  const categoryTitles = [
+    { value: 'tea', title: 'Чай' },
+    { value: 'coffee', title: 'Кофе' },
+    { value: 'teapots', title: 'Чайники' },
+    { value: 'cezves', title: 'Турки' },
+    { value: 'other', title: 'Прочее' },
+  ];
+
   useEffect(() => {
     if (category) {
       fetch(`${API_URL}/api/products/${category}`)
@@ -24,7 +32,7 @@ export const ProductProvider = ({ children }) => {
   }, [category]);
 
   return (
-    <ProductContext.Provider value={{ products, setCategory }}>
+    <ProductContext.Provider value={{ products, setCategory, categoryTitles }}>
       {children}
     </ProductContext.Provider>);
 };

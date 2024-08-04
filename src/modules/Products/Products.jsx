@@ -2,14 +2,13 @@ import './Products.css';
 import { Product } from '../Product/Product';
 import { useEffect, useRef, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { categoryTitles } from '../../const';
 import { SkeletonLoader } from '../SkeletonLoader/SkeletonLoader';
 import { useProducts } from '../../context/ProductContext';
 
 export const Products = () => {
   const scrollRef = useRef(null);
   const [searchParams] = useSearchParams();
-  const { products, setCategory } = useProducts();
+  const { products, setCategory, categoryTitles } = useProducts();
   const category = searchParams.get('category');
   const [title, setTitle] = useState("");
 

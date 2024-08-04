@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom';
 import './Footer.css';
+import { useProducts } from '../../context/ProductContext';
 
 export const Footer = () => {
+  const { categoryTitles } = useProducts();
+
   return (
     <footer className="footer">
       <div className="container footer__container">
@@ -10,21 +13,11 @@ export const Footer = () => {
         </Link>
         <div className="footer__nav">
           <ul className="footer__menu">
-            <li className="footer__menu-item">
-              <Link className="footer__menu-link" to="/products?category=tea">Чай</Link>
-            </li>
-            <li className="footer__menu-item">
-              <Link className="footer__menu-link" to="/products?category=coffee">Кофе</Link>
-            </li>
-            <li className="footer__menu-item">
-              <Link className="footer__menu-link" to="/products?category=teapots">Чайники</Link>
-            </li>
-            <li className="footer__menu-item">
-              <Link className="footer__menu-link" to="/products?category=cezves">Турки</Link>
-            </li>
-            <li className="footer__menu-item">
-              <Link className="footer__menu-link" to="/products?category=other">Прочее</Link>
-            </li>
+            {categoryTitles.map(categoryTitle => (
+              <li key={categoryTitle.value} className="footer__menu-item">
+                <Link className="footer__menu-link" to={`/products?category=${categoryTitle.value}`}>{categoryTitle.title}</Link>
+              </li>
+            ))}
           </ul>
         </div>
         <div className="footer__info">
