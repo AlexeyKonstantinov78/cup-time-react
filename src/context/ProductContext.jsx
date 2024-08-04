@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useState } from 'react';
-import { API_URL } from '../../const';
+import { API_URL } from '../const';
+
 
 const ProductContext = createContext();
 

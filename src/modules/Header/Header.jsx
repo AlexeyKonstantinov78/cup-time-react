@@ -1,6 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import './Header.css';
-import { useCart } from '../context/CartContext';
+import { useCart } from '../../context/CartContext';
+
 
 export const Header = () => {
   const location = useLocation();

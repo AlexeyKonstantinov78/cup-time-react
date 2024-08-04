@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { API_URL } from '../../const';
-import { useCart } from '../context/CartContext';
+
 import './CartItem.css';
+import { useCart } from '../../context/CartContext';
 
 export const CartItem = ({ id, title, img, price, quantity }) => {
   const [itemQuantity, setItemQuantity] = useState(quantity);

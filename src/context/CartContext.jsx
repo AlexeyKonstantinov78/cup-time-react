@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useState } from 'react';
-import { KEY_STORE } from '../../const';
+import { KEY_STORE } from '../const';
+
 
 const CartContext = createContext();
 

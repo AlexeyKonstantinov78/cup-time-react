@@ -1,10 +1,10 @@
 import './Products.css';
 import { Product } from '../Product/Product';
 import { useEffect, useRef, useState } from 'react';
-import { useProducts } from '../context/ProductContext';
 import { useSearchParams } from 'react-router-dom';
 import { categoryTitles } from '../../const';
 import { SkeletonLoader } from '../SkeletonLoader/SkeletonLoader';
+import { useProducts } from '../../context/ProductContext';
 
 export const Products = () => {
   const scrollRef = useRef(null);
