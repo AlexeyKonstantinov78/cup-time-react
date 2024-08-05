@@ -3,6 +3,7 @@ import './ProductModal.css';
 import { API_URL } from '../../const.js';
 import { useState } from 'react';
 import { useCart } from '../../context/CartContext.jsx';
+import _ from './ProductModal.module.css';
 
 const customStyles = {
   content: {
@@ -42,73 +43,87 @@ export const ProductModal = ({ isOpen, onRequestClose, data }) => {
 
   return (
     <Modal
-      className='modal'
+      className={_.modal}
+      overlayClassName={_.overlay}
       isOpen={isOpen}
       onRequestClose={onRequestClose}
-      style={customStyles}
-      contentLabel='Product Modal'>
+      contentLabel={`${data.title}`}>
       <img
-        className='modal__img'
+        className={_.image}
         src={`${API_URL}${data.img}`}
         alt={data.title}
-        width={366}
       />
-      <div className='modal__content'>
-        <h2 className='modal__title'>{data.title}</h2>
-        <p className='modal__price'>{data.price}&nbsp;₽</p>
-        <ul className='modal__list'>
+      <div className={_.content}>
+        <div className={_.header}>
+          <h2 className={_.title}>{data.title}</h2>
+          <p className={_.price}>{data.price}&nbsp;₽</p>
+        </div>
+
+        <ul className={_.list}>
           {Object.entries(data.additional).map(([key, value]) => (
-            <li className='modal__item' key={key}>
-              <strong>{key}:</strong> {value}
+            <li className={_.item} key={key}>
+              <span className={_.field}>{key}:</span>
+              <span className={_.value}>{value}</span>
             </li>
           ))}
         </ul>
-        <div className='modal__quantity'>
-          <div className='cart-item__quantity'>
+
+        <div className={_.footer}>
+          <div className={_.count}>
             <button
-              className='cart-item__quantity-button cart-item__quantity-button_minus'
-              onClick={handleDecrease}></button>
+              className={_.btn}
+              onClick={handleDecrease}><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0.5" y="0.5" width="35" height="35" rx="3.5" stroke="#B8B8B8" />
+                <rect x="12" y="17" width="12" height="2" fill="#1D1C1D" />
+              </svg>
+            </button>
             <input
-              className='cart-item__quantity-input'
+              className={_.number}
               type='number'
               value={quantity}
               readOnly
             />
             <button
-              className='cart-item__quantity-button cart-item__quantity-button_plus'
-              onClick={handleIncrease}></button>
+              className={_.btn}
+              onClick={handleIncrease}><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0.5" y="0.5" width="35" height="35" rx="3.5" stroke="#B8B8B8" />
+                <rect x="12" y="17.25" width="12" height="1.5" fill="#1D1C1D" />
+                <rect x="17.25" y="24" width="12" height="1.5" transform="rotate(-90 17.25 24)" fill="#1D1C1D" />
+              </svg>
+            </button>
           </div>
-          <button className='cart__order-button' onClick={handleAddToCart}>
-            Добавить в корзину
+          <button className={_.btnAddCart} onClick={handleAddToCart}>
+            Добавить
           </button>
+
         </div>
+        <button className={_.btnCloseCard} onClick={onRequestClose}>
+          <svg
+            width='20'
+            height='20'
+            viewBox='0 0 20 20'
+            fill='none'
+            xmlns='http://www.w3.org/2000/svg'>
+            <rect
+              x='5.71228'
+              y='14.1975'
+              width='12'
+              height='1.5'
+              transform='rotate(-45 5.71228 14.1975)'
+              fill='#B8B8B8'
+            />
+            <rect
+              x='14.1976'
+              y='15.2582'
+              width='12'
+              height='1.5'
+              transform='rotate(-135 14.1976 15.2582)'
+              fill='#B8B8B8'
+            />
+          </svg>
+        </button>
       </div>
 
-      <button className='modal__close' onClick={onRequestClose}>
-        <svg
-          width='20'
-          height='20'
-          viewBox='0 0 20 20'
-          fill='none'
-          xmlns='http://www.w3.org/2000/svg'>
-          <rect
-            x='5.71228'
-            y='14.1975'
-            width='12'
-            height='1.5'
-            transform='rotate(-45 5.71228 14.1975)'
-            fill='#B8B8B8'
-          />
-          <rect
-            x='14.1976'
-            y='15.2582'
-            width='12'
-            height='1.5'
-            transform='rotate(-135 14.1976 15.2582)'
-            fill='#B8B8B8'
-          />
-        </svg>
-      </button>
     </Modal>
   );
 };
