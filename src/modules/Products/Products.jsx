@@ -21,9 +21,9 @@ export const Products = () => {
     });
   }, [category, setCategory]);
 
-  useEffect(() => {
-    scrollRef.current.scrollIntoView({ behavior: 'smooth' });
-  }, [products]);
+  // useEffect(() => {
+  //   scrollRef.current.scrollIntoView({ behavior: 'smooth' });
+  // }, [products]);
 
   return (
     <section className="products" ref={scrollRef}>
