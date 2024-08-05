@@ -1,5 +1,5 @@
 import { useOrder } from '../../context/OrderContext';
-import './Order.css';
+import s from './Order.module.css';
 
 export const Order = () => {
   const { orderDetails, updateOrderDetails } = useOrder();
@@ -10,13 +10,13 @@ export const Order = () => {
   };
 
   return (
-    <section className='order'>
-      <div className='container order__container'>
-        <h2 className='order__title'>Доставка</h2>
+    <section className={s.order}>
+      <div className={`container ${s.order__container}`}>
+        <h2 className={s.order__title}>Доставка</h2>
 
-        <form className='order__form'>
+        <form className={s.order__form}>
           <input
-            className='order__input'
+            className={s.order__input}
             type='text'
             name='name'
             placeholder='Имя'
@@ -24,7 +24,7 @@ export const Order = () => {
             onChange={handleChange}
           />
           <input
-            className='order__input'
+            className={s.order__input}
             type='text'
             name='phone'
             placeholder='Телефон'
@@ -32,7 +32,7 @@ export const Order = () => {
             onChange={handleChange}
           />
           <input
-            className='order__input order__input_address'
+            className={s.order__input + ' ' + s.order__input_address}
             type='text'
             name='address'
             placeholder='Адрес'
@@ -40,12 +40,12 @@ export const Order = () => {
             onChange={handleChange}
           />
 
-          <fieldset className='order__payment'>
-            <h3 className='order__payment-title'>Оплата:</h3>
+          <fieldset className={s.order__payment}>
+            <h3 className={s.order__paymentTitle}>Оплата:</h3>
 
-            <label className='order__payment-label'>
+            <label className={s.order__paymentLabel}>
               <input
-                className='order__radio'
+                className={s.order__radio}
                 type='radio'
                 name='payment'
                 value='card'
@@ -54,9 +54,9 @@ export const Order = () => {
               />{' '}
               Картой
             </label>
-            <label className='order__payment-label'>
+            <label className={s.order__paymentLabel}>
               <input
-                className='order__radio'
+                className={s.order__radio}
                 type='radio'
                 name='payment'
                 value='cash'

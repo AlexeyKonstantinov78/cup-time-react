@@ -21,7 +21,7 @@
   gap: 50px;
 }
 
-.footer__menu-link {
+.footer__menuLink {
   color: #fff;
   font-size: 20px;
 }
@@ -57,7 +57,7 @@
 
 }
 
-.footer__social-item {
+.footer__socialItem {
   width: 32px;
   height: 32px;
 }
@@ -79,7 +79,7 @@
     font-size: 16px;
   }
 
-  .footer__menu-link {
+  .footer__menuLink {
     font-size: 16px;
   }
 

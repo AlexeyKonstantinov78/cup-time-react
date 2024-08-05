@@ -39,7 +39,7 @@
   padding-top: 12px;
 }
 
-.order__payment-title {
+.order__paymentTitle {
   display: block;
   font-weight: 400;
   font-size: 20px;
@@ -47,14 +47,14 @@
   margin-bottom: 12px;
 }
 
-.order__payment-label {
+.order__paymentLabel {
   display: block;
   font-size: 16px;
   color: #1d1d1d;
   margin-bottom: 8px;
 }
 
-.order__payment-label:last-child {
+.order__paymentLabel:last-child {
   margin-bottom: 0;
 }
 
@@ -123,14 +123,14 @@
     padding-top: 12px;
   }
 
-  .order__payment-title {
+  .order__paymentTitle {
     font-weight: 400;
     font-size: 20px;
     margin-top: 0;
     margin-bottom: 12px;
   }
 
-  .order__payment-label {
+  .order__paymentLabel {
     display: block;
     font-size: 16px;
     margin-bottom: 8px;

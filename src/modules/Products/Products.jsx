@@ -1,4 +1,4 @@
-import './Products.css';
+import s from './Products.module.css';
 import { Product } from '../Product/Product';
 import { useEffect, useRef, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
@@ -26,10 +26,10 @@ export const Products = () => {
   // }, [products]);
 
   return (
-    <section className="products" ref={scrollRef}>
-      <div className="container products__container">
-        <h2 className="products__title">{title}</h2>
-        <ul className="products__list">
+    <section className={s.products} ref={scrollRef}>
+      <div className={`container ${s.products__container}`}>
+        <h2 className={s.products__title}>{title}</h2>
+        <ul className={s.products__list}>
           {products.length ?
             (products.map(product => <Product key={product.id} {...product} />)) :
             (<SkeletonLoader />)

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useCart } from '../../context/CartContext';
 import { CartItem } from '../CartItem/CartItem';
 
-import './Cart.css';
+import s from './Cart.module.css';
 import { useOrder } from '../../context/OrderContext';
 import { API_URL, ERROR, SUCCESS } from '../../const';
 import Modal from 'react-modal';
@@ -73,35 +73,35 @@ export const Cart = () => {
   };
 
   return (
-    <section className='cart'>
-      <div className='container cart__container'>
-        <h2 className='cart__title'>Корзина ({cartCount})</h2>
-        <ul className='cart__items'>
+    <section className={s.cart}>
+      <div className={`container ${s.cart__container}`}>
+        <h2 className={s.cart__title}>Корзина ({cartCount})</h2>
+        <ul className={s.cart__items}>
           {cart &&
             cart.map((product) => <CartItem key={product.id} {...product} />)}
         </ul>
-        <div className='cart__summary'>
-          <h3 className='cart__summary-title'>Итого:</h3>
-          <p className='cart__total'>{totalPrice}&nbsp;₽</p>
-          <button className='cart__order-button' onClick={handleSubmit}>
+        <div className={s.cart__summary}>
+          <h3 className={s.cart__summaryTitle}>Итого:</h3>
+          <p className={s.cart__total}>{totalPrice}&nbsp;₽</p>
+          <button className={s.cart__orderButton} onClick={handleSubmit}>
             Заказать
           </button>
         </div>
       </div>
 
       <Modal
-        className='modal-cart'
-        overlayClassName="modal-cart__overlay"
+        className={s.modalCart}
+        overlayClassName={s.modalCart__overlay}
         isOpen={modalIsOpen}
         style={customStyles}
         onRequestClose={closeModal}
         contentLabel='Cart Modal'>
-        <h2 className='modal-cart__title'>
+        <h2 className={s.modalCart__title}>
           {orderStatus === SUCCESS
             ? `Заказ успешноотправлен! Номер заказа: ${orderId}`
             : 'Произошла ошибка при отправке заказа'}
         </h2>
-        <button className='modal-cart__button' onClick={closeModal}> <svg
+        <button className={s.modalCart__button} onClick={closeModal}> <svg
           width='20'
           height='20'
           viewBox='0 0 20 20'

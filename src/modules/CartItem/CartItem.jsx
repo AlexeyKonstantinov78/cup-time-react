@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { API_URL } from '../../const';
 
-import './CartItem.css';
+import s from './CartItem.module.css';
 import { useCart } from '../../context/CartContext';
 
 export const CartItem = ({ id, title, img, price, quantity }) => {
@@ -24,23 +24,23 @@ export const CartItem = ({ id, title, img, price, quantity }) => {
   };
 
   return (
-    <li className='cart-item'>
-      <img className='cart-item__img' src={`${API_URL}${img}`} alt={title} />
-      <div className='cart-item__info'>
-        <h3 className='cart-item__title'>{title}</h3>
-        <div className='cart-item__quantity'>
+    <li className={s.cartItem}>
+      <img className={s.cartItem__img} src={`${API_URL}${img}`} alt={title} />
+      <div className={s.cartItem__info}>
+        <h3 className={s.cartItem__title}>{title}</h3>
+        <div className={s.cartItem__quantity}>
           <button
-            className='cart-item__quantity-button cart-item__quantity-button_minus'
+            className={s.cartItem__quantityButton + ' ' + s.cartItem__quantityButton_minus}
             onClick={handleDecrease}></button>
           <input
-            className='cart-item__quantity-input'
+            className={s.cartItem__quantityInput}
             type='number'
             value={itemQuantity}
             readOnly
           />
-          <button className='cart-item__quantity-button cart-item__quantity-button_plus' onClick={handleIncrease}></button>
+          <button className={s.cartItem__quantityButton + ' ' + s.cartItem__quantityButton_plus} onClick={handleIncrease}></button>
         </div>
-        <p className='cart-item__price'>{price * quantity}&nbsp;₽</p>
+        <p className={s.cartItem__price}>{price * quantity}&nbsp;₽</p>
       </div>
     </li>
   );

@@ -18,7 +18,7 @@
   justify-content: space-between;
 }
 
-.header__logo-link {
+.header__logoLink {
   font-size: 0;
 }
 
@@ -28,11 +28,11 @@
   gap: 50px;
 }
 
-.header__menu-link.active {
+.header__menuLink.active {
   color: #64099b;
 }
 
-.header__cart-link {
+.header__cartLink {
   width: 28px;
   height: 28px;
   color: #64099b;
@@ -50,7 +50,7 @@
   gap: 16px;
 }
 
-.header__close-btn {
+.header__closeBtn {
   display: none;
 }
 
@@ -79,7 +79,7 @@
     gap: 24px;
   }
 
-  .header__menu-link {
+  .header__menuLink {
     font-size: 16px;
   }
 }
@@ -121,7 +121,7 @@
     flex-direction: column;
   }
 
-  .header__close-btn {
+  .header__closeBtn {
     position: absolute;
     top: 20px;
     right: 16px;
